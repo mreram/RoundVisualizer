@@ -135,7 +135,7 @@ class VisualizerView @kotlin.jvm.JvmOverloads constructor(
                 animator1 = ValueAnimator.ofFloat(dataSet[0][1], Math.abs(defaultRadius - RenderUtils.sum(chunked1.toByteArray()).toFloat() / defaultRadius)).apply {
                     addUpdateListener { animator ->
                         dataSet[0][1] = animator.animatedValue as Float
-                        invalidate()
+                        postInvalidate()
                     }
                     duration = DURATION_CHANGE
                     start()
@@ -145,7 +145,7 @@ class VisualizerView @kotlin.jvm.JvmOverloads constructor(
                 animator2 = ValueAnimator.ofFloat(dataSet[1][1], Math.abs(defaultRadius - RenderUtils.sum(chunked2.toByteArray()).toFloat() / defaultRadius)).apply {
                     addUpdateListener { animator ->
                         dataSet[1][1] = animator.animatedValue as Float
-                        invalidate()
+                        postInvalidate()
                     }
                     duration = DURATION_CHANGE
                     start()
@@ -155,7 +155,7 @@ class VisualizerView @kotlin.jvm.JvmOverloads constructor(
                 animator3 = ValueAnimator.ofFloat(dataSet[2][1], Math.abs(defaultRadius - RenderUtils.sum(chunked3.toByteArray()).toFloat() / defaultRadius)).apply {
                     addUpdateListener { animator ->
                         dataSet[2][1] = animator.animatedValue as Float
-                        invalidate()
+                        postInvalidate()
                     }
                     duration = DURATION_CHANGE
                     start()
@@ -165,7 +165,7 @@ class VisualizerView @kotlin.jvm.JvmOverloads constructor(
                 animator4 = ValueAnimator.ofFloat(dataSet[3][1], Math.abs(defaultRadius - RenderUtils.sum(chunked4.toByteArray()).toFloat() / defaultRadius)).apply {
                     addUpdateListener { animator ->
                         dataSet[3][1] = animator.animatedValue as Float
-                        invalidate()
+                        postInvalidate()
                     }
                     duration = DURATION_CHANGE
                     start()
