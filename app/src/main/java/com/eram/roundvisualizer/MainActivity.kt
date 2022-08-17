@@ -1,16 +1,13 @@
 package com.eram.roundvisualizer
 
-import android.annotation.SuppressLint
 import android.media.MediaPlayer
-import android.media.audiofx.Visualizer
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.support.v7.app.AppCompatActivity
+import android.view.View
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var visualizerView: VisualizerView
-
 
     private val mediaPlayer: MediaPlayer by lazy {
         MediaPlayer().apply {
@@ -19,8 +16,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +28,13 @@ class MainActivity : AppCompatActivity() {
             }
             prepare()
             start()
+        }
+        findViewById<View>(R.id.albumCard).setOnClickListener {
+            if (mediaPlayer.isPlaying) {
+                mediaPlayer.pause()
+            } else {
+                mediaPlayer.start()
+            }
         }
     }
 
